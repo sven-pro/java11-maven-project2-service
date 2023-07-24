@@ -2,7 +2,7 @@
 currentBuild.description = "branchName: ${env.branchName}"
 pipeline {
 	agent { label 'build01'}
-
+	options { skipDefaultCheckout true }
 	stages {
 		stage("CheckOut"){
 			steps {
