@@ -38,7 +38,7 @@ pipeline {
 		}
 
 		stage("sonar scann"){
-			stpes{
+			steps{
 				script{
 					withCredentials([usernamePassword(credentialsId: '3b325fda-d61d-4283-bcdb-4c53ad68bea9', 
 													  passwordVariable: 'SONAR_PASSWD', 
