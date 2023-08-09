@@ -37,5 +37,23 @@ pipeline {
 			}
 		}
 
+		stage("sonar scann"){
+			stpes{
+				script{
+					withCredentials([usernamePassword(credentialsId: '3b325fda-d61d-4283-bcdb-4c53ad68bea9', 
+													  passwordVariable: 'SONAR_PASSWD', 
+													  usernameVariable: 'SONAR_USER')]) {
+						sh """
+							sonar-scanner \
+							-Dsonar.login=${SONAR_USER} \
+							-Dsonar.password=${SONAR_PASSWD} \
+							-Dsonar.host.url=http://10.1.1.229:9000 
+						"""
+				    }
+				}
+			}
+
+		}
+
 	}
 }
