@@ -40,6 +40,7 @@ pipeline {
 		stage("sonar scann"){
 			steps{
 				script{
+					/*
 					withCredentials([usernamePassword(credentialsId: '3b325fda-d61d-4283-bcdb-4c53ad68bea9', 
 													  passwordVariable: 'SONAR_PASSWD', 
 													  usernameVariable: 'SONAR_USER')]) {
@@ -50,6 +51,15 @@ pipeline {
 							-Dsonar.host.url=http://10.1.1.229:9000 
 						"""
 				    }
+					*/
+
+					withSonarQubeEnv(credentialsId: 'b8a196d0-e69a-4728-abf5-402ecea4139a') {						
+						sh """
+							sonar-scanner \
+							-Dsonar.login=${SONAR_AUTH_TOKEN} \
+							-Dsonar.host.url=http://10.1.1.229:9000 
+						"""
+					}
 				}
 			}
 
