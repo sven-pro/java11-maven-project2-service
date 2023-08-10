@@ -57,7 +57,7 @@ pipeline {
 						sh """
 							sonar-scanner \
 							-Dsonar.login=${SONAR_AUTH_TOKEN} \
-							-Dsonar.host.url=http://10.1.1.229:9000 
+							-Dsonar.host.url=${SONAR_HOST_URL}
 						"""
 					}
 				}
