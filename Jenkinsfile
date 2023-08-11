@@ -44,7 +44,7 @@ pipeline {
 				echo "${env.branchName}"
 				name1 = "${env.branchName}"
 				println("${name1.size()}")
-				echo "============"
+				echo "============+++++++++++++"
 				echo "${params.branchName}"
 				name2 = "${params.branchName}"
 				println("${name2.size()}")
