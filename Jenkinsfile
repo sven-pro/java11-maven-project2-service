@@ -44,7 +44,7 @@ pipeline {
 				echo "${env.branchName}"
 				name1 = "${env.branchName}"
 				println("${name1.size()}")
-				echo "============+++++++++++++"
+				echo "============+++++++++++++----------------------------"
 				echo "${params.branchName}"
 				name2 = "${params.branchName}"
 				println("${name2.size()}")
@@ -54,7 +54,7 @@ pipeline {
 							sonar-scanner \
 							-Dsonar.login=${SONAR_AUTH_TOKEN} \
 							-Dsonar.host.url=${SONAR_HOST_URL} \
-							-Dsonar.branch.name=${params.branchName}							
+							-Dsonar.branch.name=${env.branchName}							
 
 						"""
 					}
