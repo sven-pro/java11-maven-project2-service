@@ -40,7 +40,7 @@ pipeline {
 		stage("sonar scann"){
 			steps{
 				script{
-				echo "11111111"	
+				echo "111111112222222222222"	
 				echo "${env.branchName}"
 				name1 = "${env.branchName}"
 				println("${name1.size()}")
