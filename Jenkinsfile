@@ -57,8 +57,8 @@ pipeline {
 						sh """
 							sonar-scanner \
 							-Dsonar.login=${SONAR_AUTH_TOKEN} \
-							-Dsonar.host.url=${SONAR_HOST_URL} \
-							–Dsonar.branch.name=${params.branchName}
+							-Dsonar.host.url=${SONAR_HOST_URL} 
+
 						"""
 					}
 				}
